@@ -40,8 +40,9 @@ const PredictionResults: React.FC<PredictionResultsProps> = ({ predictions, curr
   };
 
   // Get badge color based on percentage change
+  // Using only valid badge variants: "default", "secondary", "destructive", "outline"
   const getBadgeVariant = (change: number) => {
-    if (change > 3) return "success";
+    if (change > 3) return "default"; // Changed from "success" to "default"
     if (change > 0) return "secondary";
     if (change > -3) return "outline";
     return "destructive";
